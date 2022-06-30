@@ -6,15 +6,15 @@ passport.use(new GoogleStrategy ({
   clientSecret: process.env.clientSecret,
   callbackURL: process.env.callbackURL
 }, (accessToken, refreshToken, profile, done) => {
-done(null, profile);
+  done(null, profile);
 }));
 
 // serialize user when saving to session
 passport.serializeUser((user, serialize) => {
-serialize(null, user);
+  serialize(null, user);
 });
 
 // deserialize user when reading from sesion
 passport.deserializeUser((obj, deserialize) => {
-deserialize(null, obj);
+  deserialize(null, obj);
 });
